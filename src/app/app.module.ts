@@ -8,8 +8,7 @@ import { DayComponent } from './day/day.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { CalendarService } from './_services/index';
 
-import { ModalModule } from '../lib/angular2-modal/index';
-import { BootstrapModalModule } from '../lib/angular2-modal/plugins/bootstrap/index';
+import { AngularFireModule } from 'angularfire2';
 
 
 @NgModule({
@@ -22,8 +21,12 @@ import { BootstrapModalModule } from '../lib/angular2-modal/plugins/bootstrap/in
     BrowserModule,
     FormsModule,
     HttpModule,
-    ModalModule.forRoot(),
-    BootstrapModalModule
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyBUrvmP1MBbNZ-t1iNyqQ9rxrhcVrSraBU',
+      authDomain: 'calendar-app-15195.firebaseapp.com',
+      databaseURL: 'https://calendar-app-15195.firebaseio.com',
+      storageBucket: 'calendar-app-15195.appspot.com'
+    })
   ],
   providers: [ CalendarService ],
   bootstrap: [AppComponent]
