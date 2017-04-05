@@ -23,7 +23,7 @@ export class TopbarComponent implements OnInit {
   }
 
   changeMonth(): void {
-
+    this.calendarService.notifyOther({option: 'onSubmit', data: {}});
   }
   createNewDates(): void {
 

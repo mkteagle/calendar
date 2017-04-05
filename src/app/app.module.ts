@@ -8,6 +8,10 @@ import { DayComponent } from './day/day.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { CalendarService } from './_services/index';
 
+import { ModalModule } from '../lib/angular2-modal/index';
+import { BootstrapModalModule } from '../lib/angular2-modal/plugins/bootstrap/index';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +21,9 @@ import { CalendarService } from './_services/index';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   providers: [ CalendarService ],
   bootstrap: [AppComponent]

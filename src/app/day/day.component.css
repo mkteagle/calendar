@@ -14,10 +14,14 @@
     height: 20px;
     width: 13.5%;
     font-weight: bold;
+    text-align: center;
 }
 .gray {
     color: silver;
-    cursor: none;
+    cursor: default;
+}
+.highlighted {
+  background: silver;
 }
 .event {
     color: cornflowerblue;

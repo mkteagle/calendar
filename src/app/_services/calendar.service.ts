@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Day } from '../_models/index';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class CalendarService {
@@ -14,10 +17,18 @@ export class CalendarService {
   public pointerToSunday: any = this.previousDate - (this.dateIndex - 1);
   public todaysDate: any = this.numberOfDays(this.year, (new Date().getMonth() + 1));
   public dayRepeater: Day[] = this.dayFiller();
+  private notify = new Subject<any>();
+  notifyObservable$ = this.notify.asObservable();
 
   constructor() { }
 
-  numberOfDays(year, month) {
+  public notifyOther(data: any) {
+    if (data) {
+      this.notify.next(data);
+    }
+  }
+
+  numberOfDays (year, month) {
     var d = new Date(year, month, 0);
     return d.getDate();
   }
