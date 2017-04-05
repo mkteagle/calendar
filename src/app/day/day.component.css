@@ -1,0 +1,25 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.day {
+    height: 100px;
+    width: 13%;
+    border: 1px solid black;
+    padding: 3px;
+    cursor: pointer;
+}
+.today {
+    height: 20px;
+    width: 13.5%;
+    font-weight: bold;
+}
+.gray {
+    color: silver;
+    cursor: none;
+}
+.event {
+    color: cornflowerblue;
+    margin-top: 10px;
+}

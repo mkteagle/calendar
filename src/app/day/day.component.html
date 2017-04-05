@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="today" *ngFor="let today of days">
+        {{today}}
+    </div>
+</div>
+<div class="row">
+    <div class="day" *ngFor="let day of dayRepeater; let i = index" [ngClass]="{'gray': i < dateIndex || i > (dateIndex + todaysDate) - 1}" (click)="currentIndex = i">
+        {{day.day}}
+        <input [(ngModel)]="day.event" [hidden]="i < dateIndex || i > (dateIndex + todaysDate) - 1" type="text" *ngIf="currentIndex === i" />
+        <div class="event">{{day.event}}</div>
+    </div>
+</div>
